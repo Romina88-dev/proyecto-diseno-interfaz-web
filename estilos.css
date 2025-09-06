@@ -1,0 +1,441 @@
+/* VARIABLES GLOBALES */
+:root {
+    /* Paleta de colores */
+    --crema: #FAF3E0;
+    --bordo: #7B3E3E;
+    --gris: #3A3A3A;
+    --marron: #843C10;
+    --naranjaClaro: #EABDA4;
+    --verde: #495C42;
+    --verdeClaro: #D0D9CD;
+
+    /* Tipografías */
+    --fuenteTitulos: 'Playfair Display', serif;
+    --fuenteTextos: 'Lato', sans-serif;
+
+    /* Viñeta personalizada */
+    --viñeta: url(img/lana.png);
+}
+
+/* RESET Y ESTILOS GENERALES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--fuenteTextos);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: var(--gris);
+    min-width: 1024px; /* no ponemos medidas en el body, esta medida va en ancho */
+}
+
+/* TIPOGRAFÍA Y TEXTOS */
+h1,
+h2,
+h3 {
+    font-family: var(--fuenteTitulos);
+}
+
+h1 {
+    font-style: italic;
+    font-size: 50px;
+    color: var(--verde);
+}
+
+h2,
+h3 {
+    color: var(--bordo);
+}
+
+h2 {
+    font-size: 32px;
+    padding-bottom: 15px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+p,
+th {
+    font-size: 18px;
+}
+
+ul {
+    list-style-position: inside;
+    list-style-image: var(--viñeta);
+}
+
+/* CLASES UTILITARIAS */
+.ancho {
+    max-width: 1280px;
+    width: 80%;
+    margin: 0 auto;
+    padding: 50px;
+
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;/* ya es esto por defecto no es necesario */
+    align-items: stretch;/* ya es esto por defecto no es necesario */
+    justify-content: space-between;
+}
+/* Para la sección características */
+.multifila {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.unCuarto {
+    width: calc(35% - 10px);
+    background-color: var(--verdeClaro);
+}
+
+.tresCuartos {
+    width: calc(65% - 10px);
+    background-color: var(--naranjaClaro);
+}
+/* Para la tabla dentro de la sección Pre-Venta */
+.derecha {
+    margin-top: 50px;
+    margin-bottom: auto;
+}
+
+/* HEADER Y NAVEGACIÓN */
+header {
+    background-color: var(--verde);
+    padding: 20px 40px;
+}
+
+.contenedorHeader {
+    align-items: center;
+}
+
+.logo img {
+    height: 100px;
+}
+
+header a {
+    padding: 20px 30px;
+    margin: 10px;
+    text-decoration: none;
+    color: var(--crema);
+    border-radius: 5px;
+    transition: background-color .3s ease;
+}
+
+.navPrincipal a:hover {
+    background-color: var(--crema);
+    color: var(--verde);
+}
+
+/* INTRODUCCIÓN */
+#introduccion {
+    background-image: url(img/fondo.jpg);
+    background-size: cover;
+    background-position: right;
+    padding: 100px 0;
+    height: 500px;
+}
+
+#introduccion .flex { /* si lo sacas no cambia nada ya le diste las propiedades con lo anterior */
+    height: 100%;
+    align-items: center;
+    justify-content: left;
+}
+
+#introduccion article {
+    width: 700px;
+}
+
+#introduccion a,
+#caracteristicas div,
+#ofertas .flex {
+    margin-top: 20px;
+}
+
+/* BOTONES (estilos generales)*/
+.btn,
+.multifila article a {
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: 0;
+    text-align: center;
+    transition: background-color .3s ease;
+}
+
+.btn-verde {
+    background-color: var(--verde);
+    color: var(--crema);
+}
+
+.btn-verde:hover,
+footer {
+    background-color: var(--bordo);
+}
+
+
+/* SECCIÓN CARACTERÍSTICAS */
+#caracteristicas h2 {
+    text-align: center;
+}
+
+.multifila article {
+    padding: 50px 30px;
+    flex-direction: column;
+    border-radius: 12px;
+    gap: 15px;
+}
+
+.multifila article h3,
+form label {
+    font-weight: 700;
+}
+
+.multifila article a {
+    width: fit-content;
+    margin-top: auto;
+    color: var(--verde);
+}
+
+.multifila article a:hover {
+    text-decoration: underline;
+    color: var(--bordo);
+}
+
+/* SECCIÓN OFERTAS */
+#ofertas {
+    background-color: var(--verdeClaro);
+}
+
+#ofertas h3,
+h1 {
+    color: var(--verde);
+}
+
+#ofertas h3,
+#ofertas strong {
+    font-size: x-large;
+}
+
+#ofertas li {
+    padding-bottom: 10px;
+}
+
+#ofertas .flex {
+    gap: 30px;
+}
+
+#ofertas article {
+    padding: 20px;
+    background-color: var(--crema);
+    border-radius: 5px;
+    width: calc(100%/4);
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#ofertas a {
+    background-color: var(--verdeClaro);
+    color: var(--bordo);
+}
+
+#ofertas a:hover,
+#suscripciones article,
+#preventa {
+    background-color: var(--naranjaClaro);
+}
+
+/* SECCIÓN SUSCRIPCIONES */
+#suscripciones {
+    text-align: center;
+}
+
+#suscripciones h2,
+#suscripciones p {
+    width: 60%;
+    margin: 0 auto;
+}
+
+#suscripciones article {
+    width: calc(100%/3);
+    margin: 20px 0;
+    border-radius: 12px;
+}
+
+#suscripciones article p {
+    width: 100%;
+}
+
+#suscripciones article figcaption,
+#suscripciones article h3,
+#suscripciones article p {
+    text-align: left;
+    padding: 0 25px 25px;
+}
+
+#suscripciones img {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+#suscripciones figcaption {
+    color: var(--gris);
+    margin-top: 10px;
+}
+
+#suscripciones a {
+    background-color: var(--bordo);
+    color: var(--crema);
+}
+
+#suscripciones a:hover {
+    background-color: var(--marron);
+}
+
+#suscripciones .flex {
+    gap: 30px;
+}
+
+/* SECCIÓN PREVENTA Y FORMULARIO */
+.contenedor-preventa {
+    gap: 80px;
+}
+
+.contenedor-preventa h3,
+.contenedor-preventa p {
+    padding-bottom: 20px;
+}
+
+.columna {
+    flex: 1;
+}
+
+.seleccion-kit {
+    gap: 16px;
+}
+
+.seleccion-kit label {
+    display: block;
+    padding-bottom: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.seleccion-kit>div:first-child {
+    flex: 2;
+}
+
+.seleccion-kit>div:last-child {
+    flex: 1;
+}
+
+input[type=email],
+input[type=number],
+input[type=text],
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 0;
+    border-radius: 6px;
+}
+
+textarea {
+    resize: vertical;
+    min-height: fit-content;
+    max-height: 200px;
+}
+
+.checkbox,
+.reservaBtn {
+    margin-left: auto;
+}
+
+.reservaBtn {
+    background-color: var(--bordo);
+    color: var(--crema);
+    cursor: pointer;
+}
+
+.reservaBtn:hover {
+    background-color: var(--verde);
+}
+
+/* TABLAS */
+table {
+    border-collapse: collapse;
+    background-color: var(--crema);
+    border-radius: 6px;
+}
+
+.contenedor-preventa table p {
+    font-size: small;
+    font-weight: lighter;
+    padding: 0;
+}
+
+thead {
+    background-color: var(--marron);
+    color: var(--crema);
+    text-align: right;
+}
+
+th[scope=row] {
+    text-align: left;
+}
+
+tbody tr:nth-child(even) {
+    background-color: var(--verde);
+    color: var(--crema);
+}
+
+td,
+th {
+    padding: 10px;
+}
+
+tbody td {
+    font-size: 14px;
+    text-align: right;
+    font-weight: 700;
+}
+
+/* REDES SOCIALES Y FOOTER */
+.redes {
+    justify-content: right;
+    gap: 80px;
+}
+
+.redes img {
+    height: 50px;
+}
+
+.redes a {
+    align-content: center;
+}
+
+.contenedor-footer {
+    padding: 20px 50px;
+}
